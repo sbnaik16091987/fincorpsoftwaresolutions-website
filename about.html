@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="about.css">
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
     <div class="nav-left">
       <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="logo" />
-      <span class="company-name">Fincorp Software Solutions</span>
+      <span class="company-name">FinCorp Software Solutions</span>
     </div>
-    <div class="nav-center">
+
+    <!-- Desktop Navbar -->
+    <div class="nav-center hidden md:flex gap-4">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="about.html" style="color: #000;">About us</a>
+      <a href="about.html" style="color: black;">About us</a>
       <a href="contact.html">Contact us</a>
     </div>
+
+
+    <!-- Mobile Navbar -->
+    <div class="nav-mobile flex flex-col md:hidden gap-2 text-sm p-4 hidden">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" style="color: black;">About us</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+
+    <!-- Mobile Menu Icon (Hamburger) -->
+    <div class="lg:hidden flex items-center" id="menu-icon">
+      <i class="fas fa-bars text-white text-3xl"></i>
+    </div>
   </header>
-  
+
   <!-- Inspiring Journey Section -->
   <section class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
     <!-- Animated background elements -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
       <div class="absolute top-20 left-20 w-40 h-40 rounded-full bg-blue-400 opacity-10 animate-pulse"></div>
-      <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-blue-400 opacity-10 animate-pulse delay-300"></div>
-      <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-400 opacity-10 animate-pulse delay-700"></div>
+      <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-blue-400 opacity-10 animate-pulse delay-300">
+      </div>
+      <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-400 opacity-10 animate-pulse delay-700">
+      </div>
     </div>
-    
+
     <div class="container mx-auto px-6 py-16 relative z-10">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
         <!-- Left Text Section -->
@@ -41,7 +61,7 @@
             <span class="text-white">Inspiring</span><br>
             <span class="text-blue-300">Journey</span>
           </h1>
-          
+
           <!-- Timeline -->
           <div class="mt-12 space-y-8">
             <div class="timeline-item relative pl-16">
@@ -51,7 +71,7 @@
               <h3 class="text-xl font-semibold mb-2">Founded in 2010</h3>
               <p class="text-blue-100">Started with just 5 passionate team members</p>
             </div>
-            
+
             <div class="timeline-item relative pl-16">
               <div class="icon-circle absolute left-0 top-0">
                 <i class="fas fa-globe text-blue-300"></i>
@@ -61,7 +81,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Right Text Section -->
         <div class="lg:w-1/2 space-y-8">
           <!-- Vision Box -->
@@ -73,10 +93,11 @@
               <h2 class="text-2xl font-bold">Vision</h2>
             </div>
             <p class="text-blue-100 leading-relaxed">
-              To craft best-in-class technology products and solutions that transform industries and empower communities through innovation.
+              To craft best-in-class technology products and solutions that transform industries and empower communities
+              through innovation.
             </p>
           </div>
-          
+
           <!-- Mission Box -->
           <div class="mission-box p-8 rounded-2xl transition-all duration-500 hover:scale-[1.02]">
             <div class="flex items-center mb-4">
@@ -86,10 +107,12 @@
               <h2 class="text-2xl font-bold">Mission</h2>
             </div>
             <p class="text-blue-100 leading-relaxed">
-              Foster local talent and deliver best-in-class technology products globally. Strive for excellence, sustainable development, and community empowerment, contributing to a global impact through innovation, agility, and inclusivity.
+              Foster local talent and deliver best-in-class technology products globally. Strive for excellence,
+              sustainable development, and community empowerment, contributing to a global impact through innovation,
+              agility, and inclusivity.
             </p>
           </div>
-          
+
           <!-- Values Box -->
           <div class="mission-box p-8 rounded-2xl transition-all duration-500 hover:scale-[1.02]">
             <div class="flex items-center mb-4">
@@ -119,7 +142,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Scroll indicator -->
       <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div class="flex flex-col items-center">
@@ -129,24 +152,31 @@
       </div>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section class="about-section">
     <div class="section-title">
       <h2>Our Story</h2>
       <div class="divider"></div>
     </div>
-    
+
     <div class="about-content">
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Fincorp team working"/>
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          alt="Fincorp team working" />
       </div>
       <div class="about-text">
         <h3>Pioneering Financial Technology</h3>
-        <p>Founded in 2010, Fincorp began as a small team of financial software experts with a vision to revolutionize the fintech industry. Our founders recognized the growing need for secure, scalable financial solutions in an increasingly digital world.</p>
-        <p>Our journey has been marked by continuous innovation and a commitment to excellence. From our first banking software solution to our current suite of AI-powered financial tools, we've consistently pushed the boundaries of what's possible in fintech.</p>
-        <p>What sets us apart is our deep understanding of both technology and finance. We don't just build software - we create solutions that solve real financial challenges for businesses and consumers alike.</p>
-        
+        <p>Founded in 2010, Fincorp began as a small team of financial software experts with a vision to revolutionize
+          the fintech industry. Our founders recognized the growing need for secure, scalable financial solutions in an
+          increasingly digital world.</p>
+        <p>Our journey has been marked by continuous innovation and a commitment to excellence. From our first banking
+          software solution to our current suite of AI-powered financial tools, we've consistently pushed the boundaries
+          of what's possible in fintech.</p>
+        <p>What sets us apart is our deep understanding of both technology and finance. We don't just build software -
+          we create solutions that solve real financial challenges for businesses and consumers alike.</p>
+
       </div>
     </div>
   </section>
@@ -155,22 +185,29 @@
   <section class="ceo-section">
     <div class="ceo-container">
       <div class="ceo-image">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="CEO of Fincorp">
+        <img
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+          alt="CEO of Fincorp">
       </div>
       <div class="ceo-info">
         <h2>K.S.Naik</h2>
         <h3>Chief Executive Officer</h3>
-        <p>With 16 years of experience in finance, Kalyani has excelled in the roles of data engineer and mentor. Her strong background in project management with over 7 years of experience has helped lead key initiatives in the payment domain.</p>
-        <p>She brings deep insights into trade turbulence and consistently drives innovation in the financial sector with a focus on practical, tech-driven solutions.</p>
+        <p>With 16 years of experience in finance, Kalyani has excelled in the roles of data engineer and mentor. Her
+          strong background in project management with over 7 years of experience has helped lead key initiatives in the
+          payment domain.</p>
+        <p>She brings deep insights into trade turbulence and consistently drives innovation in the financial sector
+          with a focus on practical, tech-driven solutions.</p>
         <div class="ceo-quote">
-          "Empowering people through technology is our goal. We strive to simplify finance and open doors to new possibilities."
+          "Empowering people through technology is our goal. We strive to simplify finance and open doors to new
+          possibilities."
         </div>
-        <p>Under Kalyani's leadership, the organization has embraced data-centric strategies and has made a strong mark in the payment and finance domains.</p>
+        <p>Under Kalyani's leadership, the organization has embraced data-centric strategies and has made a strong mark
+          in the payment and finance domains.</p>
       </div>
     </div>
   </section>
-  
-  
+
+
   <!-- Core Values Section -->
   <section class="values-section">
     <div class="values-container">
@@ -179,7 +216,7 @@
         <div class="divider"></div>
         <p>These principles guide everything we do at Fincorp</p>
       </div>
-      
+
       <div class="square-grid">
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -232,21 +269,21 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col footer-logo">
         <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="footer-img" />
-        <h2>Fincorp</h2>
+        <h2>Fincorp Software Solutions</h2>
         <p>Empowering financial innovation with reliable, scalable solutions.</p>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">contact us</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -266,13 +303,13 @@
       <p>&copy; 2025 Fincorp. All rights reserved.</p>
     </div>
   </footer>
-  
+
   <script>
     // Simple animation on scroll
     document.addEventListener('DOMContentLoaded', () => {
       const missionBoxes = document.querySelectorAll('.mission-box');
       const flipCards = document.querySelectorAll(".flip-card");
-      
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -281,20 +318,33 @@
           }
         });
       }, { threshold: 0.1 });
-      
+
       missionBoxes.forEach(box => {
         box.style.opacity = '0';
         box.style.transform = 'translateY(20px)';
         box.style.transition = 'all 0.6s ease-out';
         observer.observe(box);
       });
-      
+
       flipCards.forEach((card) => {
         card.addEventListener("click", () => {
           card.classList.toggle("flipped");
         });
       });
     });
+
+
+
+    // Mobile Navbar toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.querySelector('.nav-mobile');
+
+    menuIcon.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+
   </script>
 </body>
+
 </html>

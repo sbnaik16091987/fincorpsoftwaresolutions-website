@@ -3,17 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  /* Body and Font Styles */
-  body {
+}
+
+/* Body and Font Styles */
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #B4D4FF;
     color: black;
-  }
-  
-  /* Header Styles */
-  header.navbar {
+}
+
+/* Header Styles */
+header.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,49 +27,75 @@
   }
   
   @keyframes fadeInHeader {
-    0% { opacity: 0; transform: translateY(-150px); }
-    50% { opacity: 0.5; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+    0% {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
   
-  /* Navigation Styles */
-  .nav-left {
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* Navigation Styles */
+.nav-left {
     display: flex;
     align-items: center;
     animation: bounceInLeft 1s ease-out;
-  }
-  
-  .logo {
+}
+
+.logo {
     height: 75px;
     margin-right: 10px;
-  }
-  
-  .company-name {
+}
+
+.company-name {
     font-size: 1.6rem;
     font-weight: bold;
     color: #fff;
-  }
-  
-  .nav-center {
+}
+
+.nav-center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 25px;
     animation: bounceInRight 1s ease-out;
-  }
-  
-  .nav-center a {
+}
+
+.nav-center a {
     color: #fff;
     font-weight: 500;
     font-size: 1rem;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .nav-center a:hover {
+}
+
+.nav-center a:hover {
     color: black;
     transform: scale(1.05);
+}
+
+/* Mobile Nav (visible only on small screens) */
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .nav-mobile a {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
   }
 
 /* Contact Main Section */
@@ -103,18 +129,20 @@
     animation: bounceIn 1.2s ease forwards;
 }
 
+.contact-icon i {
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+}
+
 .contact-icon {
-    background: #B4D4FF;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    min-width: 50px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    color: #fff;
-    font-size: 1.2rem;
 }
+
 
 .contact-details h3 {
     font-size: 1.2rem;
@@ -278,26 +306,66 @@ textarea.form-control {
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1024px) {
+    /* Navbar Layout */
+    header.navbar {
+        padding: 10px 20px;
+    }
+    
+    .nav-center {
+        left: unset;
+        transform: unset;
+        position: relative;
+        gap: 15px;
+    }
+}
+
 @media (max-width: 768px) {
-    .contact-hero h1 {
-        font-size: 2.2rem;
-    }
+    /* Navbar Adjustments */
+    .company-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+      }
     
-    .contact-hero p {
-        font-size: 1rem;
+      .logo {
+        height: 50px;
     }
-    
+
     .navbar {
         flex-direction: column;
         padding: 15px;
     }
-    
+
     .nav-left {
         margin-bottom: 15px;
     }
-    
+
     .nav-center {
         margin-bottom: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        text-align: center;
     }
 }
 

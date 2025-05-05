@@ -16,7 +16,6 @@ a {
     transition: all 0.3s ease;
 }
 
-
 /* Header Styles */
 header.navbar {
     display: flex;
@@ -28,13 +27,22 @@ header.navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    animation: fadeInHeader 1.5s ease-out forwards; /* Ensure header retains final state */
+    animation: fadeInHeader 1.5s ease-out forwards;
   }
   
   @keyframes fadeInHeader {
-    0% { opacity: 0; transform: translateY(-30px); }
-    50% { opacity: 0.5; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Navigation Styles */
@@ -47,10 +55,6 @@ header.navbar {
   .logo {
     height: 75px;
     margin-right: 10px;
-  }
-  
-  #home {
-    color: #fff;
   }
   
   .company-name {
@@ -68,7 +72,6 @@ header.navbar {
     animation: bounceInRight 1s ease-out;
   }
   
-  
   .nav-center a {
     color: #fff;
     font-weight: 500;
@@ -78,13 +81,38 @@ header.navbar {
   }
   
   .nav-center a:hover {
-    color: #fff;
+    color: black;
     transform: scale(1.05);
   }
   
-
+  /* Mobile Navigation */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .nav-mobile a {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: all 0.3s;
+  }
 /* Services Main Section */
-
 .services-container {
     max-width: 1200px;
     margin: 10px auto;
@@ -121,18 +149,16 @@ header.navbar {
     opacity: 0;
     transform: translateY(300px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  /* When visible */
-  .service-card.animate-left {
-    animation: fadeInCardLeft 1s ease-out forwards;
-  }
-  
-  .service-card.animate-right {
-    animation: fadeInCardRight 1s ease-out forwards;
-  }
-  
+}
 
+/* When visible */
+.service-card.animate-left {
+    animation: fadeInCardLeft 1s ease-out forwards;
+}
+
+.service-card.animate-right {
+    animation: fadeInCardRight 1s ease-out forwards;
+}
 
 .service-card:hover {
     transform: translateY(-10px);
@@ -140,13 +166,12 @@ header.navbar {
 }
 
 .service-card:nth-child(odd) {
-    animation: bounceInLeft 1s ease-out forwards; /* Add animation to odd cards */
+    animation: bounceInLeft 1s ease-out forwards;
 }
 
 .service-card:nth-child(even) {
-    animation: bounceInRight 1s ease-out forwards; /* Add animation to even cards */
+    animation: bounceInRight 1s ease-out forwards;
 }
-
 
 .service-img {
     height: 200px;
@@ -401,47 +426,92 @@ header.navbar {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .services-hero h1 {
-        font-size: 2.2rem;
+@media (max-width: 1024px) {
+    /* Navbar Layout */
+   
+    header.navbar {
+        padding: 10px 20px;
     }
-    
-    .services-hero p {
-        font-size: 1rem;
+  
+    .nav-center {
+        left: unset;
+        transform: unset;
+        position: relative;
+        gap: 15px;
     }
+  }
+  
+  @media (max-width: 768px) {
+    /* Navbar Adjustments */
+    .company-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+      }
     
+      .logo {
+        height: 50px;
+    }
+
+
     .navbar {
         flex-direction: column;
         padding: 15px;
     }
-
+  
+    .nav-left {
+        margin-bottom: 15px;
+    }
+  
     .nav-center {
-        gap: 15px;
-        margin-top: 20px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        gap: 10px;
     }
-}
-
-@keyframes fadeInCardLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-50px);
+  
+    .hamburger {
+        display: block;
+        cursor: pointer;
     }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
+  
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 6px;
+    }
+  
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+  
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: -6px;
+    }
+  
+    .nav-mobile.active {
+        display: flex;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+  
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+  
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.5rem;
+    }
+  
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
     }
   }
   
-  @keyframes fadeInCardRight {
-    0% {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
   
-
-
