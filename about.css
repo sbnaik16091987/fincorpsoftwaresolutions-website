@@ -17,7 +17,7 @@ header.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  padding: 1px 10px;
   background-color: #176B87;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -165,47 +165,7 @@ header.navbar {
   opacity: 1;
 }
 
-.about-section {
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background-color: #B4D4FF;
-  animation: fadeInUp 1.2s ease-out;
-}
 
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-  align-items: center;
-}
-
-.about-image {
-  flex: 1 1 40%;
-  animation: fadeInLeft 1.5s ease-out;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.about-text {
-  flex: 1 1 55%;
-  animation: fadeInRight 1.5s ease-out;
-}
-
-.about-text h3 {
-  font-size: 1.5rem;
-  color: #176B87;
-  margin-bottom: 1rem;
-}
-
-.about-text p {
-  margin-bottom: 1rem;
-  color: #555;
-}
 
 .stats {
   display: flex;
@@ -503,4 +463,20 @@ header.navbar {
     flex-direction: row;
     text-align: center;
   }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inspiring-journey {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0; /* Ensures the section starts hidden */
 }
