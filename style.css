@@ -31,10 +31,12 @@ header.navbar {
     opacity: 0;
     transform: translateY(-150px);
   }
+
   50% {
     opacity: 0.5;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -96,18 +98,7 @@ header.navbar {
   font-weight: 600;
 }
 
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
 
-.hamburger span {
-  width: 30px;
-  height: 4px;
-  background-color: #fff;
-  margin: 6px 0;
-  transition: all 0.3s;
-}
 /* Product Info */
 .product-info {
   padding: 10px 10px;
@@ -125,6 +116,7 @@ header.navbar {
   font-size: 2.2rem;
   color: #000;
   margin-bottom: 5px;
+  animation: fadeIn 1s forwards;
 }
 
 
