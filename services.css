@@ -124,10 +124,24 @@ header.navbar {
     margin-bottom: 20px;
 }
 
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the h2 element */
 .services-intro h2 {
     color: #000;
     font-size: 2rem;
     margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-out;
 }
 
 .services-intro p {

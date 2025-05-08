@@ -465,18 +465,20 @@ header.navbar {
   }
 }
 
-@keyframes fadeInUp {
+/* Keyframes for slide-in from the left */
+@keyframes slideInLeft {
   0% {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateX(-100px); /* Start off-screen to the left */
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0); /* End at the original position */
   }
 }
 
+/* Apply the animation to the inspiring journey block */
 .inspiring-journey {
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: slideInLeft 0.8s ease-out forwards;
   opacity: 0; /* Ensures the section starts hidden */
 }
