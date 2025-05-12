@@ -1,301 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Fincorp Financial Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon-logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="services.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- Navbar -->
     <header class="navbar">
-        <div class="nav-left">
-            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-              <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="logo" />
-              <span class="company-name">FinCorp Software Solutions</span>
-            </a>
-          </div>
+      <div class="nav-left">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+          <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="logo" />
+          <span class="company-name">FinCorp Software Solutions</span>
+        </a>
+      </div>
 
-        <!-- Desktop Navbar -->
-        <div class="nav-center hidden md:flex gap-4">
-            <a href="index.html">Home</a>
-            <a href="services.html" style="color: black;">Services</a>
-            <a href="about.html">About us</a>
-            <a href="contact.html">Contact us</a>
-        </div>
+      <!-- Desktop Navbar -->
+      <div class="nav-center hidden md:flex">
+        <a href="index.html">Home</a>
+        <a href="services.html" style="color: black;">Services</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+      </div>
 
-        <!-- Mobile Navbar (Initially Hidden) -->
-        <div class="nav-mobile hidden flex flex-col gap-2 text-sm p-4">
-            <a href="index.html">Home</a>
-            <a href="services.html" style="color: black;">Services</a>
-            <a href="about.html">About us</a>
-            <a href="contact.html">Contact us</a>
-        </div>
+      <!-- Mobile Menu Button -->
+      <div class="mobile-nav-container">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
 
-        <!-- Mobile Menu Icon (Hamburger) -->
-        <div class="lg:hidden flex items-center" id="menu-icon">
-            <i class="fas fa-bars text-white text-3xl"></i>
-        </div>
-
-
+      <!-- Mobile Navigation Menu -->
+      <div class="nav-mobile" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html" style="color: black;">Services</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+      </div>
     </header>
-
 
     <!-- Services Main Section -->
     <div class="services-container">
-        <div class="services-intro">
-            <h2>Our Financial Services</h2>
+      <div class="services-intro">
+        <h2>Our Financial Services</h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="service-content">
+            <h3>Fintech Products</h3>
+            <p>Custom-built digital products like payment gateways, digital wallets, lending platforms, and dashboards.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Regulatory compliant</li>
+              <li><i class="fas fa-check-circle"></i> Highly scalable</li>
+              <li><i class="fas fa-check-circle"></i> Secure architecture</li>
+              <li><i class="fas fa-check-circle"></i> End-to-end solutions</li>
+            </ul>
+            <a href="#" class="service-btn">Learn More</a>
+          </div>
         </div>
 
-        <div class="services-grid">
-            <!-- Service Card 1 -->
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Fintech Products</h3>
-                    <p>Custom-built digital products like payment gateways, digital wallets, lending platforms, and dashboards.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Regulatory compliant</li>
-                        <li><i class="fas fa-check-circle"></i> Highly scalable</li>
-                        <li><i class="fas fa-check-circle"></i> Secure architecture</li>
-                        <li><i class="fas fa-check-circle"></i> End-to-end solutions</li>
-                    </ul>
-                    <a href="#" class="service-btn">Learn More</a>
-                </div>
-            </div>
-        
-            <!-- Service Card 2 -->
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Fintech Services</h3>
-                    <p>Development and consulting for banks, NBFCs, and fintech startups including APIs, KYC, and monitoring.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> API integrations</li>
-                        <li><i class="fas fa-check-circle"></i> KYC/AML systems</li>
-                        <li><i class="fas fa-check-circle"></i> Transaction monitoring</li>
-                        <li><i class="fas fa-check-circle"></i> Compliance automation</li>
-                    </ul>
-                    <a href="#" class="service-btn">Learn More</a>
-                </div>
-            </div>
-        
-            <!-- Service Card 3 -->
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Big Data Solutions</h3>
-                    <p>We build architectures with Hadoop, Spark, and Kafka for real-time analytics and data lakes.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Real-time analytics</li>
-                        <li><i class="fas fa-check-circle"></i> Data lake design</li>
-                        <li><i class="fas fa-check-circle"></i> Batch processing</li>
-                        <li><i class="fas fa-check-circle"></i> Scalable architecture</li>
-                    </ul>
-                    <a href="#" class="service-btn">Learn More</a>
-                </div>
-            </div>
-        
-            <!-- Service Card 4 -->
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="service-content">
-                    <h3>AI & ML Solutions</h3>
-                    <p>Smart automation and analytics using machine learning for insight generation and document processing.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Predictive models</li>
-                        <li><i class="fas fa-check-circle"></i> Explainable AI</li>
-                        <li><i class="fas fa-check-circle"></i> Document processing</li>
-                        <li><i class="fas fa-check-circle"></i> Customer insights</li>
-                    </ul>
-                    <a href="#" class="service-btn">Learn More</a>
-                </div>
-            </div>
-        
-            <!-- Service Card 5 -->
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-building"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Enterprise Solutions</h3>
-                    <p>Custom enterprise apps for streamlining operations and enabling digital transformation across industries.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> ERP integrations</li>
-                        <li><i class="fas fa-check-circle"></i> Workflow automation</li>
-                        <li><i class="fas fa-check-circle"></i> Productivity tools</li>
-                        <li><i class="fas fa-check-circle"></i> Custom platforms</li>
-                    </ul>
-                    <a href="#" class="service-btn">Learn More</a>
-                </div>
-            </div>
-        
-            <!-- Service Card 6 -->
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Software Solutions</h3>
-                    <p>Full-cycle development for web, mobile, and desktop systems, from MVPs to complex architectures.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Web & mobile apps</li>
-                        <li><i class="fas fa-check-circle"></i> Distributed systems</li>
-                        <li><i class="fas fa-check-circle"></i> Scalable backend</li>
-                        <li><i class="fas fa-check-circle"></i> UX-focused design</li>
-                    </ul>
-                    <a href="#" class="service-btn">Learn More</a>
-                </div>
-            </div>
+        <!-- Service Card 2 -->
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="service-content">
+            <h3>Fintech Services</h3>
+            <p>Development and consulting for banks, NBFCs, and fintech startups including APIs, KYC, and monitoring.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> API integrations</li>
+              <li><i class="fas fa-check-circle"></i> KYC/AML systems</li>
+              <li><i class="fas fa-check-circle"></i> Transaction monitoring</li>
+              <li><i class="fas fa-check-circle"></i> Compliance automation</li>
+            </ul>
+            <a href="#" class="service-btn">Learn More</a>
+          </div>
         </div>
-        
+
+        <!-- Service Card 3 -->
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="service-content">
+            <h3>Big Data Solutions</h3>
+            <p>We build architectures with Hadoop, Spark, and Kafka for real-time analytics and data lakes.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Real-time analytics</li>
+              <li><i class="fas fa-check-circle"></i> Data lake design</li>
+              <li><i class="fas fa-check-circle"></i> Batch processing</li>
+              <li><i class="fas fa-check-circle"></i> Scalable architecture</li>
+            </ul>
+            <a href="#" class="service-btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="service-content">
+            <h3>AI & ML Solutions</h3>
+            <p>Smart automation and analytics using machine learning for insight generation and document processing.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Predictive models</li>
+              <li><i class="fas fa-check-circle"></i> Explainable AI</li>
+              <li><i class="fas fa-check-circle"></i> Document processing</li>
+              <li><i class="fas fa-check-circle"></i> Customer insights</li>
+            </ul>
+            <a href="#" class="service-btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="service-content">
+            <h3>Enterprise Solutions</h3>
+            <p>Custom enterprise apps for streamlining operations and enabling digital transformation across industries.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> ERP integrations</li>
+              <li><i class="fas fa-check-circle"></i> Workflow automation</li>
+              <li><i class="fas fa-check-circle"></i> Productivity tools</li>
+              <li><i class="fas fa-check-circle"></i> Custom platforms</li>
+            </ul>
+            <a href="#" class="service-btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="service-content">
+            <h3>Software Solutions</h3>
+            <p>Full-cycle development for web, mobile, and desktop systems, from MVPs to complex architectures.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Web & mobile apps</li>
+              <li><i class="fas fa-check-circle"></i> Distributed systems</li>
+              <li><i class="fas fa-check-circle"></i> Scalable backend</li>
+              <li><i class="fas fa-check-circle"></i> UX-focused design</li>
+            </ul>
+            <a href="#" class="service-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
-        <div class="testimonials-container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>Fincorp's digital lending platform reduced our loan approval times by 80% while maintaining
-                            excellent risk standards. Their implementation team was exceptional.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JD</div>
-                        <div class="author-info">
-                            <h4>Jennifer Davis</h4>
-                            <p>CEO, Community First Bank</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>The investment analytics tools have transformed how we manage client portfolios. The
-                            predictive insights have helped us outperform benchmarks consistently.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div class="author-info">
-                            <h4>Michael Roberts</h4>
-                            <p>CIO, Horizon Wealth Management</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>Their compliance solution saved us hundreds of hours in manual reporting and significantly
-                            reduced our regulatory risk. Highly recommended for financial institutions.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SW</div>
-                        <div class="author-info">
-                            <h4>Sarah Williams</h4>
-                            <p>Compliance Officer, First Regional Bank</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="testimonials-container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>Fincorp's digital lending platform reduced our loan approval times by 80% while maintaining
+                excellent risk standards. Their implementation team was exceptional.</p>
             </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">JD</div>
+              <div class="author-info">
+                <h4>Jennifer Davis</h4>
+                <p>CEO, Community First Bank</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>The investment analytics tools have transformed how we manage client portfolios. The
+                predictive insights have helped us outperform benchmarks consistently.</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div class="author-info">
+                <h4>Michael Roberts</h4>
+                <p>CIO, Horizon Wealth Management</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>Their compliance solution saved us hundreds of hours in manual reporting and significantly
+                reduced our regulatory risk. Highly recommended for financial institutions.</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">SW</div>
+              <div class="author-info">
+                <h4>Sarah Williams</h4>
+                <p>Compliance Officer, First Regional Bank</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <div class="cta-section">
-        <h2>Ready to Transform Your Financial Operations?</h2>
-        <p>Our team of experts is ready to discuss how we can help your organization achieve its financial technology
-            goals.</p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="cta-btn cta-primary">Contact Our Team</a>
-            <a href="#" class="cta-btn cta-secondary">Request a Demo</a>
-        </div>
+      <h2>Ready to Transform Your Financial Operations?</h2>
+      <p>Our team of experts is ready to discuss how we can help your organization achieve its financial technology
+        goals.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="cta-btn cta-primary">Contact Our Team</a>
+        <a href="#" class="cta-btn cta-secondary">Request a Demo</a>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col footer-logo">
-                <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="footer-img" />
-                <h2>FinCorp Software Solutions</h2>
-                <p>Empowering financial innovation with reliable, scalable solutions.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">contact us</a></li>
-                </ul>
-            </div>
+      <div class="footer-container">
+        <div class="footer-col footer-logo">
+          <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="footer-img" />
+          <h2>FinCorp Software Solutions</h2>
+          <p>Empowering financial innovation with reliable, scalable solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">contact us</a></li>
+          </ul>
+        </div>
 
-            <div class="footer-col">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Email: <a href="mailto:contact@fincorp.com">contact@fincorp.com</a></p>
-            </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 FinCorp. All rights reserved.</p>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:contact@fincorp.com">contact@fincorp.com</a></p>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FinCorp. All rights reserved.</p>
+      </div>
     </footer>
 
     <script>
-        // Simple animation for service cards on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const serviceCards = document.querySelectorAll('.service-card');
+      // Simple animation for service cards on scroll
+      document.addEventListener('DOMContentLoaded', function () {
+        const serviceCards = document.querySelectorAll('.service-card');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, { threshold: 0.1 });
 
-            serviceCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            });
+        serviceCards.forEach(card => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          observer.observe(card);
         });
 
         // Mobile Navbar toggle
-        const menuIcon = document.getElementById('menu-icon');
-        const mobileMenu = document.querySelector('.nav-mobile');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuIcon.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('active');
         });
 
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!mobileMenu.contains(e.target) && e.target !== menuToggle) {
+            mobileMenu.classList.remove('active');
+          }
+        });
 
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
     </script>
-</body>
-
+  </body>
 </html>
