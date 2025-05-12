@@ -7,42 +7,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon-logo.jpg" type="image/x-icon">
-
-    <style>
-      
-    </style>
+    <link rel="stylesheet" href="reconciliation.css">
 </head>
 <body class="font-sans">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <a href="#" class="flex items-center text-xl font-bold">
+                <a href="#" class="flex items-center text-xl font-bold zoom-in">
                     <img src="reconciliation-logo.jpg" alt="FinCorp Logo" class="logo-img">
                     FinCorp Software Solutions
                 </a>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-blue-500 font-medium hover:text-blue-700 transition">Features</a>
-                    <a href="#solutions" class="text-gray-600 hover:text-blue-500 transition">Solutions</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition">Testimonials</a>
+                    <a href="#features" class="text-blue-500 font-medium hover:text-blue-700 transition slide-right">Features</a>
+                    <a href="#solutions" class="text-gray-600 hover:text-blue-500 transition slide-right delay-1">Solutions</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition slide-right delay-2">Testimonials</a>
                     <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition transform hover:scale-105 pulse">
                         Get Started
                     </button>
                 </div>
                 
-                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none wiggle">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 slide-up">
+            <div id="mobile-menu" class="hidden md:hidden mt-4 slide-up mobile-menu-animate">
                 <div class="flex flex-col space-y-3">
                     <a href="#features" class="text-blue-500 font-medium">Features</a>
                     <a href="#solutions" class="text-gray-600 hover:text-blue-500">Solutions</a>
                     <a href="#testimonials" class="text-gray-600 hover:text-blue-500">Testimonials</a>
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition w-full">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition w-full btn-hover-effect">
                         Get Started
                     </button>
                 </div>
@@ -55,26 +52,25 @@
         <div class="container mx-auto px-4 py-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 slide-up">
                         Advanced Data <br>
-                        <span class="text-blue-500">Reconciliation Platform</span>
+                        <span class="text-blue-500 slide-right">Reconciliation Platform</span>
                     </h1>
-                    <p class="text-xl text-gray-600 mb-8">
+                    <p class="text-xl text-gray-600 mb-8 slide-up delay-1">
                         Automate your reconciliation processes with our powerful platform featuring multi-tenant architecture, automated matching, and customizable dashboards.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
+                    <div class="flex flex-wrap gap-4 slide-up delay-2">
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition transform hover:scale-105 btn-hover-effect">
                             Start Free Trial
                         </a>
-                        <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
+                        <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg text-lg transition transform hover:scale-105 btn-hover-effect">
                             Live Demo
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2 hidden md:block">
-                    <img src="Dashboard image.jpg" alt="Data visualization" class="w-3/4 max-w-md mx-auto rounded-lg shadow-lg" style="box-shadow: gray;">
-
-                </div>
+                    <img src="Dashboard image.jpg" alt="Data visualization" class="w-3/4 max-w-md mx-auto rounded-lg shadow-lg hero-image-animate" style="box-shadow: gray;">
+                 </div>
             </div>
         </div>
     </section>
@@ -82,8 +78,8 @@
     <!-- Features Section -->
     <section id="features" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-on-scroll slide-up-animate">
-                <span class="bg-blue-500 text-white uppercase text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block rotate">
+            <div class="text-center mb-12 animate-on-scroll slide-up-animate section-header-animate">
+                <span class="bg-blue-500 text-white uppercase text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block rotate feature-icon-animate">
                     <i class="fas fa-star"></i>
                 </span>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Reconciliation Tools</h2>
@@ -97,7 +93,7 @@
                 <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.1s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-users-cog text-blue-500 text-xl"></i>
+                            <i class="fas fa-users-cog text-blue-500 text-xl feature-icon-animate"></i>
                         </div>
                         <h3 class="text-xl font-semibold">Multi-Tenant Architecture</h3>
                     </div>
@@ -110,7 +106,7 @@
                 <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.2s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-plug text-blue-500 text-xl"></i>
+                            <i class="fas fa-plug text-blue-500 text-xl feature-icon-animate"></i>
                         </div>
                         <h3 class="text-xl font-semibold">Multiple Source Integration</h3>
                     </div>
@@ -123,7 +119,7 @@
                 <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.3s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-rss text-blue-500 text-xl"></i>
+                            <i class="fas fa-rss text-blue-500 text-xl feature-icon-animate"></i>
                         </div>
                         <h3 class="text-xl font-semibold">Feeds Management</h3>
                     </div>
@@ -136,7 +132,7 @@
                 <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.4s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-balance-scale text-blue-500 text-xl"></i>
+                            <i class="fas fa-balance-scale text-blue-500 text-xl feature-icon-animate"></i>
                         </div>
                         <h3 class="text-xl font-semibold">Smart Reconciliations</h3>
                     </div>
@@ -149,7 +145,7 @@
                 <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.5s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-link text-blue-500 text-xl"></i>
+                            <i class="fas fa-link text-blue-500 text-xl feature-icon-animate"></i>
                         </div>
                         <h3 class="text-xl font-semibold">Match/Unmatch</h3>
                     </div>
@@ -162,7 +158,7 @@
                 <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.6s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-exclamation-triangle text-blue-500 text-xl"></i>
+                            <i class="fas fa-exclamation-triangle text-blue-500 text-xl feature-icon-animate"></i>
                         </div>
                         <h3 class="text-xl font-semibold">Breaks Analysis</h3>
                     </div>
@@ -177,7 +173,7 @@
     <!-- Customer Testimonials Section -->
     <section id="testimonials" class="py-16 bg-blue-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-on-scroll">
+            <div class="text-center mb-12 animate-on-scroll zoom-in-animate">
                 <span class="bg-blue-500 text-white uppercase text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
                     Testimonials
                 </span>
@@ -191,7 +187,7 @@
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-right-animate">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 testimonial-avatar">
                             <i class="fas fa-user text-blue-500 text-xl"></i>
                         </div>
                         <div>
@@ -217,7 +213,7 @@
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.2s;">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 testimonial-avatar">
                             <i class="fas fa-user text-blue-500 text-xl"></i>
                         </div>
                         <div>
@@ -243,138 +239,144 @@
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-left-animate">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 testimonial-avatar">
                             <i class="fas fa-user text-blue-500 text-xl"></i>
                         </div>
                         <div>
                             <h4 class="font-bold">David Rodriguez</h4>
-            <p class="text-gray-500 text-sm">Head of Finance, GlobalPay</p>
+                            <p class="text-gray-500 text-sm">Head of Finance, GlobalPay</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "We reduced our month-end close time from 7 days to just 2 days after implementing FinCorp. The customizable dashboards give our executives real-time visibility they never had before."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> 1 month ago
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="mt-16 text-center animate-on-scroll zoom-in-animate">
+                <h3 class="text-2xl font-bold mb-4">Ready to transform your reconciliation process?</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition transform hover:scale-105 btn-hover-effect">
+                        Request a Demo
+                    </a>
+                    <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg text-lg transition transform hover:scale-105 btn-hover-effect">
+                        See More Testimonials
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="flex mb-3">
-        <i class="fas fa-star text-yellow-400"></i>
-        <i class="fas fa-star text-yellow-400"></i>
-        <i class="fas fa-star text-yellow-400"></i>
-        <i class="fas fa-star text-yellow-400"></i>
-        <i class="fas fa-star-half-alt text-yellow-400"></i>
-    </div>
-    <p class="text-gray-600 mb-4">
-        "We reduced our month-end close time from 7 days to just 2 days after implementing FinCorp. The customizable dashboards give our executives real-time visibility they never had before."
-    </p>
-    <div class="text-sm text-gray-500">
-        <i class="fas fa-calendar-alt mr-2"></i> 1 month ago
-    </div>
-</div>
-</div>
+    </section>
 
-<!-- Call to Action -->
-<div class="mt-16 text-center animate-on-scroll">
-    <h3 class="text-2xl font-bold mb-4">Ready to transform your reconciliation process?</h3>
-    <div class="flex flex-wrap justify-center gap-4">
-        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
-            Request a Demo
-        </a>
-        <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
-            See More Testimonials
-        </a>
-    </div>
-</div>
-</div>
-</section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center animate-on-scroll fade-in">
+            <p>&copy; 2023 FinCorp Software Solutions. All rights reserved.</p>
+        </div>
+    </footer>
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-4 text-center animate-on-scroll">
-        <p>&copy; 2023 FinCorp Software Solutions. All rights reserved.</p>
-    </div>
-</footer>
-
-<script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('slide-up');
-    });
-
-    // Scroll animation trigger
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initial animations
-        const elementsToAnimate = document.querySelectorAll('.slide-up, .slide-right, .slide-left, .fade-in');
-        elementsToAnimate.forEach(element => {
-            element.style.opacity = '1';
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('mobile-menu-animate');
         });
-
-        // Scroll animations
-        const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
         
-        function checkIfInView() {
-            const windowHeight = window.innerHeight;
-            const windowTopPosition = window.scrollY;
-            const windowBottomPosition = windowTopPosition + windowHeight;
-            
-            animateOnScrollElements.forEach(element => {
-                const elementHeight = element.offsetHeight;
-                const elementTopPosition = element.offsetTop;
-                const elementBottomPosition = elementTopPosition + elementHeight;
-                
-                // Check if element is in viewport
-                if (
-                    (elementBottomPosition >= windowTopPosition) &&
-                    (elementTopPosition <= windowBottomPosition)
-                ) {
-                    element.classList.add('animated');
-                }
+        // Scroll animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial animations
+            const elementsToAnimate = document.querySelectorAll('.slide-up, .slide-right, .slide-left, .fade-in, .zoom-in');
+            elementsToAnimate.forEach(element => {
+                element.style.opacity = '1';
             });
-        }
-        
-        // Initial check
-        checkIfInView();
-        
-        // Check on scroll
-        window.addEventListener('scroll', checkIfInView);
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+            
+            // Scroll animations
+            const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+            
+            function checkIfInView() {
+                const windowHeight = window.innerHeight;
+                const windowTopPosition = window.scrollY;
+                const windowBottomPosition = windowTopPosition + windowHeight;
                 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                animateOnScrollElements.forEach(element => {
+                    const elementHeight = element.offsetHeight;
+                    const elementTopPosition = element.offsetTop;
+                    const elementBottomPosition = elementTopPosition + elementHeight;
                     
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
+                    // Check if element is in viewport
+                    if (
+                        (elementBottomPosition >= windowTopPosition) &&
+                        (elementTopPosition <= windowBottomPosition)
+                    ) {
+                        element.classList.add('animated');
                     }
-                }
-            });
-        });
-        
-        // Add hover effect to feature cards
-        const featureCards = document.querySelectorAll('.feature-card');
-        featureCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-spin');
-                }
+                });
+            }
+            
+            // Initial check
+            checkIfInView();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkIfInView);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
             });
             
-            card.addEventListener('mouseleave', function() {
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-spin');
-                }
+            // Add hover effect to feature cards
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-spin');
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-spin');
+                    }
+                });
+            });
+            
+            // Add animation delays programmatically
+            const delayElements = document.querySelectorAll('.delay-1, .delay-2, .delay-3, .delay-4');
+            delayElements.forEach((el, index) => {
+                el.style.animationDelay = `${(index + 1) * 0.2}s`;
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
