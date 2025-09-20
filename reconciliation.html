@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Reconciliation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon-logo.jpg" type="image/x-icon">
+
+    <style>
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .slide-right {
+            animation: slideRight 0.8s ease-out;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .rotate {
+            animation: rotate 10s linear infinite;
+        }
+        
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideRight {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Custom Styles */
+        .hero-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            transform-origin: center bottom;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .active-tab {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Scroll Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+        }
+        
+        .slide-up-animate {
+            transform: translateY(50px);
+        }
+        
+        .slide-up-animate.animated {
+            transform: translateY(0);
+        }
+        
+        .slide-right-animate {
+            transform: translateX(-50px);
+        }
+        
+        .slide-right-animate.animated {
+            transform: translateX(0);
+        }
+        
+        .slide-left-animate {
+            transform: translateX(50px);
+        }
+        
+        .slide-left-animate.animated {
+            transform: translateX(0);
+        }
+        
+        /* Logo styles */
+        .logo-img {
+            height: 65px;
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center text-xl font-bold">
+                    <img src="Fincorp Logo.jpg" alt="FinCorp Logo" class="logo-img">
+                    FinCorp Software Solutions
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-blue-500 font-medium hover:text-blue-700 transition">Features</a>
+                    <a href="#solutions" class="text-gray-600 hover:text-blue-500 transition">Solutions</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition">Testimonials</a>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition transform hover:scale-105 pulse">
+                        Get Started
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 slide-up">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="text-blue-500 font-medium">Features</a>
+                    <a href="#solutions" class="text-gray-600 hover:text-blue-500">Solutions</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-blue-500">Testimonials</a>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition w-full">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-12 overflow-hidden">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        Advanced Data <br>
+                        <span class="text-blue-500">Reconciliation Platform</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Automate your reconciliation processes with our powerful platform featuring multi-tenant architecture, automated matching, and customizable dashboards.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
+                            Start Free Trial
+                        </a>
+                        <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 hidden md:block">
+                    <img src="Dashboard image.jpg" alt="Data visualization" class="w-3/4 max-w-md mx-auto rounded-lg shadow-lg" style="box-shadow: gray;">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-on-scroll slide-up-animate">
+                <span class="bg-blue-500 text-white uppercase text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block rotate">
+                    <i class="fas fa-star"></i>
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Reconciliation Tools</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Everything you need to streamline your reconciliation processes
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.1s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-users-cog text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Multi-Tenant Architecture</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Manage multiple clients or departments with isolated data and configurations in a single instance.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-plug text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Multiple Source Integration</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Connect to various data sources including databases, APIs, flat files, and cloud storage.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.3s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-rss text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Feeds Management</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Automatically process and normalize incoming data feeds with configurable parsing rules.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-balance-scale text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Smart Reconciliations</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Configure complex reconciliation rules with our intuitive rule builder and validation engine.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.5s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-link text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Match/Unmatch</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Automatically match transactions with configurable tolerance levels and manual override capabilities.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-exclamation-triangle text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Breaks Analysis</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Identify, categorize, and prioritize reconciliation breaks with root cause analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span class="bg-blue-500 text-white uppercase text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
+                    Testimonials
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Hear from businesses that transformed their reconciliation processes
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-right-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">CFO, FinancialEdge Inc.</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "FinCorp's reconciliation platform has saved us hundreds of hours each month. The automated matching reduced our manual work by 80% and the breaks analysis helped us identify systemic issues we didn't even know we had."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> 2 months ago
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-up-animate" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Operations Director, BankTech Solutions</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "The multi-tenant architecture was exactly what we needed to serve our diverse client base. Implementation was smooth, and their support team was incredibly responsive to our custom requirements."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> 4 months ago
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-sm p-6 animate-on-scroll slide-left-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">David Rodriguez</h4>
+            <p class="text-gray-500 text-sm">Head of Finance, GlobalPay</p>
+        </div>
+    </div>
+    <div class="flex mb-3">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star-half-alt text-yellow-400"></i>
+    </div>
+    <p class="text-gray-600 mb-4">
+        "We reduced our month-end close time from 7 days to just 2 days after implementing FinCorp. The customizable dashboards give our executives real-time visibility they never had before."
+    </p>
+    <div class="text-sm text-gray-500">
+        <i class="fas fa-calendar-alt mr-2"></i> 1 month ago
+    </div>
+</div>
+</div>
+
+<!-- Call to Action -->
+<div class="mt-16 text-center animate-on-scroll">
+    <h3 class="text-2xl font-bold mb-4">Ready to transform your reconciliation process?</h3>
+    <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
+            Request a Demo
+        </a>
+        <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg text-lg transition transform hover:scale-105">
+            See More Testimonials
+        </a>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center animate-on-scroll">
+        <p>&copy; 2023 FinCorp Software Solutions. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('slide-up');
+    });
+
+    // Scroll animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initial animations
+        const elementsToAnimate = document.querySelectorAll('.slide-up, .slide-right, .slide-left, .fade-in');
+        elementsToAnimate.forEach(element => {
+            element.style.opacity = '1';
+        });
+
+        // Scroll animations
+        const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+        
+        function checkIfInView() {
+            const windowHeight = window.innerHeight;
+            const windowTopPosition = window.scrollY;
+            const windowBottomPosition = windowTopPosition + windowHeight;
+            
+            animateOnScrollElements.forEach(element => {
+                const elementHeight = element.offsetHeight;
+                const elementTopPosition = element.offsetTop;
+                const elementBottomPosition = elementTopPosition + elementHeight;
+                
+                // Check if element is in viewport
+                if (
+                    (elementBottomPosition >= windowTopPosition) &&
+                    (elementTopPosition <= windowBottomPosition)
+                ) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initial check
+        checkIfInView();
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkIfInView);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add hover effect to feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-spin');
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-spin');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
