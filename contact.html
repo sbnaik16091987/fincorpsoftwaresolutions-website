@@ -22,7 +22,6 @@
         </a>
       </div>
 
-      <!-- Desktop Navbar -->
       <div class="nav-center hidden md:flex">
         <a href="/">Home</a>
         <a href="services.html">Services</a>
@@ -30,14 +29,12 @@
         <a href="contact.html">Contact us</a>
       </div>
 
-      <!-- Mobile Menu Button -->
       <div class="mobile-nav-container">
         <button id="menu-toggle" class="text-white focus:outline-none">
           <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
 
-      <!-- Mobile Navigation Menu -->
       <div class="nav-mobile" id="mobile-menu">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -97,37 +94,40 @@
 
       <div class="contact-form" style="--order: 2;">
         <h2>Send Us a Message</h2>
+
+        <!-- ⭐ AJAX FORM (NO REDIRECT) -->
         <form id="contactForm">
+
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
           </div>
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
           </div>
 
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
           </div>
 
           <div class="form-group">
             <label for="subject">Subject</label>
-            <select id="subject" class="form-control" required>
+            <select id="subject" name="subject" class="form-control" required>
               <option value="">Select a subject</option>
-              <option value="sales">Sales Inquiry</option>
-              <option value="support">Technical Support</option>
-              <option value="partnership">Partnership Opportunities</option>
-              <option value="careers">Careers</option>
-              <option value="other">Other</option>
+              <option value="Sales Inquiry">Sales Inquiry</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Partnership Opportunities">Partnership Opportunities</option>
+              <option value="Careers">Careers</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="message">Your Message</label>
-            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+            <textarea id="message" name="message" class="form-control" placeholder="How can we help you?" required></textarea>
           </div>
 
           <button type="submit" class="submit-btn">Send Message</button>
@@ -184,33 +184,33 @@
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
+    <!-- ⭐ AJAX EMAIL SENDING SCRIPT -->
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
+      document.addEventListener("DOMContentLoaded", () => {
+
+        // ⭐ Contact Form Submit Logic
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
           e.preventDefault();
 
-          // Get form values
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const phone = document.getElementById('phone').value;
-          const subject = document.getElementById('subject').value;
-          const message = document.getElementById('message').value;
+          const formData = new FormData(this);
+          formData.append("_captcha", "false");
+          formData.append("_template", "table");
+          formData.append("_subject", "New Contact Form Message");
 
-          // Simple validation
-          if (!name || !email || !subject || !message) {
-            alert('Please fill in all required fields');
-            return;
+          const response = await fetch("https://formsubmit.co/ajax/ambiabhijeet2003@gmail.com", {
+            method: "POST",
+            body: formData
+          });
+
+          if (response.ok) {
+            alert("Message sent successfully!");
+            this.reset();
+          } else {
+            alert("Something went wrong. Please try again.");
           }
-
-          // Here you would typically send the data to your server
-          console.log('Form submitted:', { name, email, phone, subject, message });
-
-          // Simulate successful submission
-          alert('Thank you for your message! We will get back to you soon.');
-          this.reset();
         });
 
-        // Mobile Navbar toggle
+        // ⭐ Mobile menu & scroll controls
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuToggle.querySelector('i');
@@ -222,7 +222,6 @@
           menuIcon.classList.toggle('fa-xmark');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
           if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
             mobileMenu.classList.remove('active');
@@ -231,7 +230,6 @@
           }
         });
 
-        // Close menu when clicking on a link
         mobileMenu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
@@ -240,18 +238,6 @@
           });
         });
 
-        // Highlight active navigation link
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-        const navLinks = document.querySelectorAll('.nav-center a, .nav-mobile a');
-
-        navLinks.forEach(link => {
-          const linkPage = link.getAttribute('href');
-          if (linkPage === currentPage) {
-            link.classList.add('active-link');
-          }
-        });
-
-        // Scroll to top button
         const scrollTopBtn = document.getElementById("scrollTopBtn");
 
         window.onscroll = function() {
@@ -263,9 +249,10 @@
         };
 
         scrollTopBtn.addEventListener("click", function() {
-          window.scrollTo({top: 0, behavior: 'smooth'});
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
       });
     </script>
+
   </body>
 </html>
