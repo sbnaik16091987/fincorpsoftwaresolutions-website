@@ -47,7 +47,8 @@ body {
 
 /* Mobile Nav */
 .mobile-nav-container {
-  display: none; /* Hidden by default, shown on mobile */
+  display: none;
+  /* Hidden by default, shown on mobile */
 }
 
 .nav-mobile {
@@ -201,7 +202,8 @@ body {
   }
 
   .navbar .company-name {
-    font-size: 1rem; /* Reduced from 1.25rem for mobile */
+    font-size: 1rem;
+    /* Reduced from 1.25rem for mobile */
   }
 
   .mobile-nav-container {
