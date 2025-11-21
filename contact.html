@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,249 +12,290 @@
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Navbar -->
-<header class="navbar header-animation">
-  <div class="nav-left">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-      <img src="logo.png" alt="Fincorp Logo" class="logo" />
-      <span class="company-name">FinCorp Software Solutions</span>
-    </a>
-  </div>
+  <!-- Navbar -->
+  <header class="navbar header-animation">
+    <div class="nav-left">
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="Fincorp Logo" class="logo" />
+        <span class="company-name">FinCorp Software Solutions</span>
+      </a>
+    </div>
 
-  <div class="nav-center hidden md:flex">
-    <a href="/">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About us</a>
-    <a href="contact.html">Contact us</a>
-  </div>
+    <div class="nav-center hidden md:flex">
+      <a href="/">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact us</a>
+    </div>
 
-  <div class="mobile-nav-container">
-    <button id="menu-toggle" class="text-white focus:outline-none">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </div>
+    <div class="mobile-nav-container">
+      <button id="menu-toggle" class="text-white focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
 
-  <div class="nav-mobile" id="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About us</a>
-    <a href="contact.html">Contact us</a>
-  </div>
-</header>
+    <div class="nav-mobile" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+  </header>
 
-<!-- Contact Section -->
-<div class="contact-container">
-  <div class="contact-info" style="--order: 1;">
-    <h2>Contact Information</h2>
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <div class="contact-info" style="--order: 1;">
+      <h2>Contact Information</h2>
 
-    <div class="contact-method">
-      <div class="contact-icon">
-        <i class="fas fa-map-marker-alt"></i>
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Our Headquarters</h3>
+          <p>406, Nisarg Meadows, Wakad, Pune, Maharashtra-4110057</p>
+        </div>
       </div>
-      <div class="contact-details">
-        <h3>Our Headquarters</h3>
-        <p>406, Nisarg Meadows, Wakad, Pune, Maharashtra-4110057</p>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Phone Numbers</h3>
+          <p>K.S.Naik: <a href="tel:+917972787172">+91 7972787172</a><br>
+            Support: <a href="tel:+919529843414">+91 9529843414</a></p>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Email Addresses</h3>
+          <p>Support: <a href="mailto:contact@fincorpsoft.com">contact@fincorpsoft.com</a><br>
+            Website: <a href="https://www.fincorpsoft.com/" target="_blank"
+              rel="noopener noreferrer">www.fincorpsoft.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Business Hours</h3>
+          <p>Monday - Friday: 8:00 AM - 6:00 PM PST<br>
+            Saturday - Sunday: Closed</p>
+        </div>
       </div>
     </div>
 
-    <div class="contact-method">
-      <div class="contact-icon">
-        <i class="fas fa-phone-alt"></i>
-      </div>
-      <div class="contact-details">
-        <h3>Phone Numbers</h3>
-        <p>K.S.Naik: <a href="tel:+917972787172">+91 7972787172</a><br>
-        Support: <a href="tel:+919529843414">+91 9529843414</a></p>
+    <div class="contact-form" style="--order: 2;">
+      <h2>Send Us a Message</h2>
+
+      <!-- Contact Form with Getform -->
+      <form id="contactForm" action="https://getform.io/f/bgdjkkqa" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" class="form-control" required>
+            <option value="">Select a subject</option>
+            <option value="Sales Inquiry">Sales Inquiry</option>
+            <option value="Technical Support">Technical Support</option>
+            <option value="Partnership Opportunities">Partnership Opportunities</option>
+            <option value="Careers">Careers</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" class="form-control" placeholder="How can we help you?"
+            required></textarea>
+        </div>
+
+        <!-- Hidden honeypot field to prevent spam -->
+        <input type="hidden" name="_gotcha" style="display:none !important">
+
+        <button type="submit" id="submitBtn" class="submit-btn">Send Message</button>
+      </form>
+
+      <div id="successMessage"
+        style="display: none; margin-top: 20px; padding: 15px; background: #10b981; color: white; border-radius: 8px; text-align: center;">
+        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get back to you
+        soon.
       </div>
     </div>
+  </div>
 
-    <div class="contact-method">
-      <div class="contact-icon">
-        <i class="fas fa-envelope"></i>
-      </div>
-      <div class="contact-details">
-        <h3>Email Addresses</h3>
-        <p>Support: <a href="mailto:contact@fincorpsoft.com">contact@fincorpsoft.com</a><br>
-        Website: <a href="https://www.fincorpsoft.com/" target="_blank" rel="noopener noreferrer">www.fincorpsoft.com</a></p>
-      </div>
-    </div>
-
-    <div class="contact-method">
-      <div class="contact-icon">
-        <i class="fas fa-clock"></i>
-      </div>
-      <div class="contact-details">
-        <h3>Business Hours</h3>
-        <p>Monday - Friday: 8:00 AM - 6:00 PM PST<br>
-        Saturday - Sunday: Closed</p>
-      </div>
+  <!-- Map Section -->
+  <div class="map-container">
+    <h2>Our Location</h2>
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.169041285924!2d73.76602787586586!3d18.56611998253696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b93780a83a19%3A0x430215c153e15a57!2sNisarg%20Meadows!5e0!3m2!1sen!2sus!4v1684862412345!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 
-  <div class="contact-form" style="--order: 2;">
-    <h2>Send Us a Message</h2>
-
-    <!-- FormSubmit AJAX Form -->
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col footer-logo">
+        <img src="logo.png" alt="Fincorp Logo" class="footer-img" />
+        <h2>FinCorp Software Solutions</h2>
+        <p>Empowering financial innovation with reliable, scalable solutions.</p>
       </div>
-
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+      <div class="footer-col footer-hide-mobile">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </div>
-
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+      <div class="footer-col footer-hide-mobile">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
       </div>
-
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <select id="subject" name="subject" class="form-control" required>
-          <option value="">Select a subject</option>
-          <option value="Sales Inquiry">Sales Inquiry</option>
-          <option value="Technical Support">Technical Support</option>
-          <option value="Partnership Opportunities">Partnership Opportunities</option>
-          <option value="Careers">Careers</option>
-          <option value="Other">Other</option>
-        </select>
+      <div class="footer-col footer-hide-mobile">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:contact@fincorp.com">contact@fincorp.com</a></p>
+        <p>Phone: <a href="tel:+917972787172">+91 7972787172</a></p>
       </div>
-
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" class="form-control" placeholder="How can we help you?" required></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </div>
-</div>
-
-<!-- Map Section -->
-<div class="map-container">
-  <h2>Our Location</h2>
-  <div class="map-wrapper">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.169041285924!2d73.76602787586586!3d18.56611998253696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b93780a83a19%3A0x430215c153e15a57!2sNisarg%20Meadows!5e0!3m2!1sen!2sus!4v1684862412345!5m2!1sen!2sus"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col footer-logo">
-      <img src="logo.png" alt="Fincorp Logo" class="footer-img" />
-      <h2>FinCorp Software Solutions</h2>
-      <p>Empowering financial innovation with reliable, scalable solutions.</p>
     </div>
-    <div class="footer-col footer-hide-mobile">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2025 FinCorp. All rights reserved.</p>
     </div>
-    <div class="footer-col footer-hide-mobile">
-      <h4>Support</h4>
-      <ul>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms</a></li>
-      </ul>
-    </div>
-    <div class="footer-col footer-hide-mobile">
-      <h4>Contact</h4>
-      <p>Email: <a href="mailto:contact@fincorp.com">contact@fincorp.com</a></p>
-      <p>Phone: <a href="tel:+917972787172">+91 7972787172</a></p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 FinCorp. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 
-<!-- Scroll to Top -->
-<button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-<!-- Scripts -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Handle form submission
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
 
-  // FormSubmit AJAX
-  const form = document.getElementById("contactForm");
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    formData.append("_captcha", "false");
-    formData.append("_template", "table");
-    formData.append("_subject", "New Contact Form Message");
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/ambiabhijeet2003@gmail.com", {
-        method: "POST",
-        body: formData
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        // Get form data
+        const formData = new FormData(form);
+
+        // Submit to Getform
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+          .then(response => {
+            if (response.ok) {
+              // Success
+              submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+              submitBtn.style.backgroundColor = '#10b981';
+              successMessage.style.display = 'block';
+              form.reset();
+
+              setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.backgroundColor = '';
+                successMessage.style.display = 'none';
+              }, 5000);
+            } else {
+              throw new Error('Form submission failed');
+            }
+          })
+          .catch(error => {
+            // Error
+            submitBtn.innerHTML = '<i class="fas fa-times"></i> Failed';
+            submitBtn.style.backgroundColor = '#ef4444';
+            alert('❌ Sorry, there was an error. Please email us directly at ambiabhijeet2003@gmail.com');
+
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalText;
+              submitBtn.style.backgroundColor = '';
+            }, 3000);
+          });
       });
-      if (response.ok) {
-        alert("Message sent successfully!");
-        form.reset();
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      alert("Error sending message: " + err);
-    }
-  });
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = menuToggle.querySelector('i');
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = menuToggle.querySelector('i');
 
-  menuToggle.addEventListener('click', function(e) {
-    e.stopPropagation();
-    mobileMenu.classList.toggle('active');
-    menuIcon.classList.toggle('fa-bars');
-    menuIcon.classList.toggle('fa-xmark');
-  });
+      menuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('active');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-xmark');
+      });
 
-  document.addEventListener('click', function(e) {
-    if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      mobileMenu.classList.remove('active');
-      menuIcon.classList.add('fa-bars');
-      menuIcon.classList.remove('fa-xmark');
-    }
-  });
+      document.addEventListener('click', function (e) {
+        if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+          menuIcon.classList.add('fa-bars');
+          menuIcon.classList.remove('fa-xmark');
+        }
+      });
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      menuIcon.classList.add('fa-bars');
-      menuIcon.classList.remove('fa-xmark');
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuIcon.classList.add('fa-bars');
+          menuIcon.classList.remove('fa-xmark');
+        });
+      });
+
+      // Scroll to top
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      window.onscroll = () => {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          scrollTopBtn.classList.add("show");
+        } else {
+          scrollTopBtn.classList.remove("show");
+        }
+      };
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     });
-  });
-
-  // Scroll to top
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  window.onscroll = () => {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      scrollTopBtn.classList.add("show");
-    } else {
-      scrollTopBtn.classList.remove("show");
-    }
-  };
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-});
-</script>
+  </script>
 
 </body>
+
 </html>
