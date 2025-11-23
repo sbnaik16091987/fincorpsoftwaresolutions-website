@@ -163,7 +163,8 @@
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter 10-digit phone number"
+            pattern="[0-9]{10}" minlength="10" maxlength="10" title="Please enter exactly 10 digits (numbers only)">
         </div>
 
         <div class="form-group">
