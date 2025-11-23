@@ -1,18 +1,43 @@
   /* Animations */
   @keyframes fadeInHeader {
-    0% { opacity: 0; transform: translateY(-150px); }
-    50% { opacity: 0.5; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(50px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes fadeIn {
-    0% { opacity: 0; transform: translateX(50px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   /* Service Cards (used on home page) */
@@ -27,7 +52,8 @@
 
   #home-services .service-card {
     background-color: white;
-    height: 100%; /* Ensure cards in a row have the same height */
+    height: 100%;
+    /* Ensure cards in a row have the same height */
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -94,9 +120,10 @@
   }
 
   /* Hamburger Icon Animation */
-  #menu-toggle > i {
+  #menu-toggle>i {
     transition: transform 0.3s ease-in-out;
   }
+
   #menu-toggle .fa-xmark {
     transform: rotate(180deg);
   }
@@ -146,14 +173,19 @@
     width: 200%;
     height: 200%;
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent 70%),
-                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1), transparent 70%);
+      radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1), transparent 70%);
     animation: rotateBG 20s linear infinite;
     z-index: 0;
   }
 
   @keyframes rotateBG {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   .hero-content {
@@ -167,7 +199,7 @@
     padding-bottom: 1rem;
   }
 
- 
+
   .navbar a.flex.items-center img {
     position: relative;
     z-index: 1;
@@ -175,8 +207,10 @@
 
   /* Increase text size of company description */
   .description-animation p {
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.8rem; /* 28.8px for better readability */
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.8rem;
+    /* 28.8px for better readability */
   }
 
   /* Mobile-specific styles for old flip-cards on home page removed */
