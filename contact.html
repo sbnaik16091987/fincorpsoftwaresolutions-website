@@ -11,9 +11,57 @@
   <link rel="stylesheet" href="shared.css">
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Custom popup notification styles */
+    .popup-notification {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .popup-notification.show {
+      top: 30px;
+    }
+
+    .popup-notification i {
+      font-size: 24px;
+    }
+
+    .popup-notification .close-btn {
+      margin-left: 20px;
+      cursor: pointer;
+      font-size: 20px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .popup-notification .close-btn:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Custom Popup Notification -->
+  <div id="popupNotification" class="popup-notification">
+    <i class="fas fa-check-circle"></i>
+    <span>Message sent successfully! We'll get back to you soon.</span>
+    <i class="fas fa-times close-btn" onclick="closePopup()"></i>
+  </div>
 
   <!-- Navbar -->
   <header class="navbar header-animation">
@@ -138,12 +186,6 @@
 
         <button type="submit" id="submitBtn" class="submit-btn">Send Message</button>
       </form>
-
-      <div id="successMessage"
-        style="display: none; margin-top: 20px; padding: 15px; background: #10b981; color: white; border-radius: 8px; text-align: center;">
-        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get back to you
-        soon.
-      </div>
     </div>
   </div>
 
@@ -197,19 +239,80 @@
 
   <!-- Scripts -->
   <script>
+    // Close popup function
+    function closePopup() {
+      const popup = document.getElementById('popupNotification');
+      popup.classList.remove('show');
+    }
+
+    // Show popup function
+    function showPopup() {
+      const popup = document.getElementById('popupNotification');
+      popup.classList.add('show');
+
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        closePopup();
+      }, 5000);
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       // Handle form submission
       const form = document.getElementById('contactForm');
       const submitBtn = document.getElementById('submitBtn');
 
-      form.addEventListener('submit', function () {
-        // Show loading state but allow form to submit naturally
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent page navigation
+
+        // Show loading state
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-        // Form will submit naturally to Getform
-        // No e.preventDefault() - this allows native HTML form submission
-        // which is more reliable across all devices, especially mobile
+        // Get form data
+        const formData = new FormData(form);
+
+        // Submit form via AJAX
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+          .then(response => {
+            if (response.ok) {
+              // Show success animation on button
+              submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Sent!';
+              submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+
+              // Show popup notification
+              showPopup();
+
+              // Reset form
+              form.reset();
+
+              // Reset button after 3 seconds
+              setTimeout(() => {
+                submitBtn.innerHTML = 'Send Message';
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+              }, 3000);
+            } else {
+              throw new Error('Form submission failed');
+            }
+          })
+          .catch(error => {
+            // Show error state
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed';
+            submitBtn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+              submitBtn.innerHTML = 'Send Message';
+              submitBtn.style.background = '';
+              submitBtn.disabled = false;
+            }, 3000);
+          });
       });
 
       // Mobile menu toggle
