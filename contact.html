@@ -146,8 +146,11 @@
     <div class="contact-form" style="--order: 2;">
       <h2>Send Us a Message</h2>
 
-      <!-- Contact Form with Getform -->
-      <form id="contactForm" action="https://getform.io/f/bgdjkkqa" method="POST">
+      <!-- Contact Form with Web3Forms -->
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="6f220817-ddc4-415a-88b6-5061b4098b44">
+
         <div class="form-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
@@ -180,9 +183,6 @@
           <textarea id="message" name="message" class="form-control" placeholder="How can we help you?"
             required></textarea>
         </div>
-
-        <!-- Hidden honeypot field to prevent spam -->
-        <input type="hidden" name="_gotcha" style="display:none !important">
 
         <button type="submit" id="submitBtn" class="submit-btn">Send Message</button>
       </form>
